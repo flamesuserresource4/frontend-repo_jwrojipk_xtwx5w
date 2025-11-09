@@ -1,48 +1,50 @@
+import React from 'react';
 import { Cpu, Gauge, ShieldCheck, Globe2 } from 'lucide-react';
 
-const features = [
+const items = [
   {
     icon: Cpu,
-    title: 'Edge-Optimized Compute',
-    desc: 'Deploy to a global mesh of edge locations for ultra-low latency and auto-scaling.',
+    title: 'Edge Compute',
+    desc: 'Run functions at the edge for ultra-low latency and dynamic experiences.',
   },
   {
     icon: Gauge,
-    title: 'Lightning Performance',
-    desc: 'HTTP/3, QUIC, Brotli, and server push out-of-the-box — tuned for speed.',
+    title: 'Blazing Performance',
+    desc: 'Optimized network with HTTP/3 and smart routing keeps things snappy.',
   },
   {
     icon: ShieldCheck,
     title: 'Zero-Trust Security',
-    desc: 'Built-in WAF, DDoS protection, and secrets vault with per-env access.',
+    desc: 'mTLS, WAF, DDoS protection, and automated patches—secure by default.',
   },
   {
     icon: Globe2,
-    title: 'Global CDN + Any Runtime',
-    desc: 'Static, Node, Python, Go — your stack, our global network.',
+    title: 'Global Anycast',
+    desc: 'Deploy to 300+ PoPs worldwide with single-click replication.',
   },
 ];
 
-export default function Features() {
+const Features = () => {
   return (
-    <section id="features" className="relative bg-[#0A0A14] py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold text-white">Engineered for performance</h2>
-        <p className="mt-3 text-center text-white/70 max-w-2xl mx-auto">
-          A modern platform that blends raw speed with intelligent automation.
-        </p>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:bg-white/10">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-fuchsia-500 to-cyan-400 text-white">
-                <Icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm text-white/70">{desc}</p>
+    <section id="features" className="relative mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="text-3xl font-semibold sm:text-4xl">Built for scale</h2>
+        <p className="mt-3 text-white/70">Everything you need to deploy, secure, and observe your apps—without the drag.</p>
+      </div>
+
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map(({ icon: Icon, title, desc }) => (
+          <div key={title} className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:bg-white/[0.08]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-fuchsia-500 to-cyan-500 text-white shadow-[0_0_18px_rgba(217,70,239,0.25)]">
+              <Icon className="h-6 w-6" />
             </div>
-          ))}
-        </div>
+            <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+            <p className="mt-2 text-sm text-white/70">{desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default Features;
