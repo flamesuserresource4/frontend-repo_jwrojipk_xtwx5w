@@ -1,8 +1,11 @@
 import React from 'react';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
-import Features from './components/Features.jsx';
+import Services from './components/Services.jsx';
+import WhyUs from './components/WhyUs.jsx';
+import Testimonials from './components/Testimonials.jsx';
 import Pricing from './components/Pricing.jsx';
+import StudentPromo from './components/StudentPromo.jsx';
 import Footer from './components/Footer.jsx';
 
 function App() {
@@ -17,8 +20,11 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
+        <Services />
+        <WhyUs />
+        <Testimonials />
         <Pricing />
+        <StudentPromo />
       </main>
       <Footer />
     </div>
